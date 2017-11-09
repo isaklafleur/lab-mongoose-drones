@@ -21,13 +21,11 @@ const drones = [
   },
 ];
 
-Drone.create(drones, (err, docs) => {
-  if (err) {
-    throw err;
+Drone.create(drones, (err, res) => {
+  if(err) {
+    console.log(err);
+  } else {
+    console.log(res);
+    mongoose.connection.close();
   }
-
-  docs.forEach((drone) => {
-    console.log(drone.droneName);
-  });
-  mongoose.connection.close();
 });

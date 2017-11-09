@@ -1,9 +1,10 @@
 {
-  "name": "solution-code",
+  "name": "lab-mongoose-drones",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
