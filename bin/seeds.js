@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/drones-dev');
+mongoose.connect('mongodb://localhost:27017/drones-dev', {
+  keepAlive: true,
+  reconnectTries: Number.MAX_VALUE,
+  useMongoClient: true,
+});
+
 const Drone = require('../models/drone');
 
 const drones = [

@@ -10,7 +10,12 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 const drones = require('./routes/drones');
 
-mongoose.connect('mongodb://localhost:27017/drones-dev');
+mongoose.connect('mongodb://localhost:27017/drones-dev', {
+  keepAlive: true,
+  reconnectTries: Number.MAX_VALUE,
+  useMongoClient: true,
+});
+
 
 var app = express();
 
