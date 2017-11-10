@@ -12,7 +12,10 @@ router.get('/', (req, res, next) => {
     if (err) {
       next(err);
     }
-    res.render('./drones', { drones });
+    const data = {
+      drones: drones,
+    }
+    res.render('./drones', data);
   });
 });
 
